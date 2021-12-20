@@ -1,0 +1,9 @@
+- name: My Personal Website
+  ansible.builtin.git:
+    accept_hostkey: yes
+    repo: 'git@github.com:a-deal/my-site.git'
+    dest: "{{ personal }}/my-site"
+    ssh_opts: "-o StrictHostKeyChecking=no"
+  tags:
+    - ssh
+    - personal-projects
